@@ -21,7 +21,6 @@ MainUI::MainUI()
     auto settingsAction = new QAction("Settings", this);
 //    connect(settingsAction, &QAction::triggered, this, &MainUI::onSettings);
 
-    menuProject->setEnabled(true);
     settingsAction->setEnabled(false);
 
     auto mainMenuBar = new QMenuBar(this);

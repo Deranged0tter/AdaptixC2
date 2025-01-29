@@ -12,6 +12,7 @@ ListenersWidget::ListenersWidget(QWidget* w)
     connect( newListenerButton, &QPushButton::clicked, this, &ListenersWidget::createListener );
     connect( editListenerButton, &QPushButton::clicked, this, &ListenersWidget::editListener );
     connect( delListenerButton, &QPushButton::clicked, this, &ListenersWidget::removeListener );
+    connect( newAgentButton, &QPushButton::clicked, this, &ListenersWidget::generateAgent );
 }
 
 ListenersWidget::~ListenersWidget() = default;
@@ -46,13 +47,15 @@ void ListenersWidget::createUI()
     newListenerButton = new QPushButton( "New Listener" );
     editListenerButton = new QPushButton( "Edit Listener" );
     delListenerButton = new QPushButton( "Delete Listener" );
+    newAgentButton = new QPushButton( "Spawn Agent" );
 
     mainGridLayout = new QGridLayout( this );
     mainGridLayout->setContentsMargins( 0, 0, 0, 0);
-    mainGridLayout->addWidget( tableWidget, 0, 0, 1, 13 );
-    mainGridLayout->addWidget( newListenerButton, 1, 5 );
-    mainGridLayout->addWidget( editListenerButton, 1, 6 );
-    mainGridLayout->addWidget( delListenerButton, 1, 7 );
+    mainGridLayout->addWidget( tableWidget, 0, 0, 1, 12 );
+    mainGridLayout->addWidget( newListenerButton, 1, 4 );
+    mainGridLayout->addWidget( editListenerButton, 1, 5 );
+    mainGridLayout->addWidget( delListenerButton, 1, 6 );
+    mainGridLayout->addWidget( newAgentButton, 1, 7 );
 }
 
 void ListenersWidget::Clear()

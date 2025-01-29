@@ -13,6 +13,7 @@ class ListenersWidget : public QWidget
     QPushButton*    newListenerButton   = nullptr;
     QPushButton*    editListenerButton  = nullptr;
     QPushButton*    delListenerButton   = nullptr;
+    QPushButton*    newAgentButton      = nullptr;
 
     void createUI();
 
