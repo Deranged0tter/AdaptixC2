@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_AdaptixClient_FILE /home/otter/Github/AdaptixC2/AdaptixClient/AdaptixClient)
+set(__QT_DEPLOY_TARGET_AdaptixClient_TYPE EXECUTABLE)

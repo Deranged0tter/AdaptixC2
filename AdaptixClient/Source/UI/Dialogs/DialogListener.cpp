@@ -5,7 +5,7 @@ DialogListener::DialogListener()
 {
     this->createUI();
 
-    connect(listenerTypeCombobox, &QComboBox::currentTextChanged, this, &DialogListener::changeConfig);
+    connect( listenerTypeCombobox, &QComboBox::currentTextChanged, this, &DialogListener::changeConfig );
     connect( buttonSave, &QPushButton::clicked, this, &DialogListener::onButtonSave );
     connect( buttonClose, &QPushButton::clicked, this, &DialogListener::onButtonClose );
 }

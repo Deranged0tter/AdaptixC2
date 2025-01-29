@@ -14,6 +14,7 @@ public:
     ~MainUI();
 
     void onExtender();
+    void onNewProject();
 
     void AddNewProject(AuthProfile* profile);
     void AddNewExtension(ExtensionFile extFile);

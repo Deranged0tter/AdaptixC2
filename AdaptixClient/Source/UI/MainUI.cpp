@@ -1,4 +1,5 @@
 #include <UI/MainUI.h>
+#include <UI/Dialogs/DialogConnect.h>
 #include <MainAdaptix.h>
 
 MainUI::MainUI()
@@ -6,9 +7,9 @@ MainUI::MainUI()
     this->setWindowTitle( FRAMEWORK_VERSION );
 
     auto newProjectAction = new QAction("New Project", this);
-//    connect(newProjectAction, &QAction::triggered, this, &MainUI::onNewProject);
+    connect(newProjectAction, &QAction::triggered, this, &MainUI::onNewProject );
     auto closeProjectAction = new QAction("Close Project", this);
-//    connect(newProjectAction, &QAction::triggered, this, &MainUI::onCloseProject);
+    connect(closeProjectAction, &QAction::triggered, this, &QApplication::quit );
 
     auto menuProject = new QMenu("Projects", this);
     menuProject->addAction(newProjectAction);
@@ -20,7 +21,7 @@ MainUI::MainUI()
     auto settingsAction = new QAction("Settings", this);
 //    connect(settingsAction, &QAction::triggered, this, &MainUI::onSettings);
 
-    menuProject->setEnabled(false);
+    menuProject->setEnabled(true);
     settingsAction->setEnabled(false);
 
     auto mainMenuBar = new QMenuBar(this);
@@ -38,6 +39,11 @@ MainUI::~MainUI()
 void MainUI::onExtender()
 {
     GlobalClient->extender->dialogExtender->show();
+}
+
+void MainUI::onNewProject()
+{
+    
 }
 
 void MainUI::AddNewProject(AuthProfile* profile)

@@ -1,0 +1,5 @@
+/home/otter/Github/AdaptixC2/AdaptixClient/CMakeFiles/AdaptixClient.dir
+/home/otter/Github/AdaptixC2/AdaptixClient/CMakeFiles/edit_cache.dir
+/home/otter/Github/AdaptixC2/AdaptixClient/CMakeFiles/rebuild_cache.dir
+/home/otter/Github/AdaptixC2/AdaptixClient/CMakeFiles/AdaptixClient_autogen_timestamp_deps.dir
+/home/otter/Github/AdaptixC2/AdaptixClient/CMakeFiles/AdaptixClient_autogen.dir

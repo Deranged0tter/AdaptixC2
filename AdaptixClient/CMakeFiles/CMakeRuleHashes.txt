@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+799f07d363c0432d6146dad86e488dc0 AdaptixClient_autogen/S5YYZ2ZCNV/qrc_Resources.cpp
+5f200907e0a33be53431d94af6f65dba AdaptixClient_autogen/timestamp
+c9720aeae0491d3653572f67002378cd CMakeFiles/AdaptixClient_autogen

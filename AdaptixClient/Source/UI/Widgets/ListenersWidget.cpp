@@ -9,6 +9,9 @@ ListenersWidget::ListenersWidget(QWidget* w)
     this->createUI();
 
     connect( tableWidget, &QTableWidget::customContextMenuRequested, this, &ListenersWidget::handleListenersMenu );
+    connect( newListenerButton, &QPushButton::clicked, this, &ListenersWidget::createListener );
+    connect( editListenerButton, &QPushButton::clicked, this, &ListenersWidget::editListener );
+    connect( delListenerButton, &QPushButton::clicked, this, &ListenersWidget::removeListener );
 }
 
 ListenersWidget::~ListenersWidget() = default;
@@ -40,9 +43,16 @@ void ListenersWidget::createUI()
     tableWidget->setHorizontalHeaderItem( 5, new QTableWidgetItem( "C2 Hosts (agent)" ) );
     tableWidget->setHorizontalHeaderItem( 6, new QTableWidgetItem( "Status" ) );
 
+    newListenerButton = new QPushButton( "New Listener" );
+    editListenerButton = new QPushButton( "Edit Listener" );
+    delListenerButton = new QPushButton( "Delete Listener" );
+
     mainGridLayout = new QGridLayout( this );
-    mainGridLayout->setContentsMargins( 0, 0,  0, 0);
-    mainGridLayout->addWidget( tableWidget, 0, 0, 1, 1);
+    mainGridLayout->setContentsMargins( 0, 0, 0, 0);
+    mainGridLayout->addWidget( tableWidget, 0, 0, 1, 13 );
+    mainGridLayout->addWidget( newListenerButton, 1, 5 );
+    mainGridLayout->addWidget( editListenerButton, 1, 6 );
+    mainGridLayout->addWidget( delListenerButton, 1, 7 );
 }
 
 void ListenersWidget::Clear()
@@ -53,7 +63,7 @@ void ListenersWidget::Clear()
         tableWidget->removeRow(index -1 );
 }
 
-void ListenersWidget::AddListenerItem(ListenerData newListener )
+void ListenersWidget::AddListenerItem( ListenerData newListener )
 {
     auto adaptixWidget = qobject_cast<AdaptixWidget*>( mainWidget );
     for( auto listener : adaptixWidget->Listeners ) {
@@ -116,7 +126,7 @@ void ListenersWidget::AddListenerItem(ListenerData newListener )
     adaptixWidget->Listeners.push_back(newListener);
 }
 
-void ListenersWidget::EditListenerItem(ListenerData newListener )
+void ListenersWidget::EditListenerItem( ListenerData newListener )
 {
     auto adaptixWidget = qobject_cast<AdaptixWidget*>( mainWidget );
 
@@ -150,7 +160,7 @@ void ListenersWidget::EditListenerItem(ListenerData newListener )
     }
 }
 
-void ListenersWidget::RemoveListenerItem(QString listenerName)
+void ListenersWidget::RemoveListenerItem( QString listenerName ) 
 {
     auto adaptixWidget = qobject_cast<AdaptixWidget*>( mainWidget );
     for ( int i = 0; i < adaptixWidget->Listeners.size(); i++ ) {
@@ -171,7 +181,7 @@ void ListenersWidget::RemoveListenerItem(QString listenerName)
 
 /// Slots
 
-void ListenersWidget::handleListenersMenu(const QPoint &pos ) const
+void ListenersWidget::handleListenersMenu( const QPoint &pos ) const
 {
     QMenu listenerMenu = QMenu();
 
@@ -182,7 +192,7 @@ void ListenersWidget::handleListenersMenu(const QPoint &pos ) const
     listenerMenu.addAction("Generate agent", this, &ListenersWidget::generateAgent );
 
     QPoint globalPos = tableWidget->mapToGlobal( pos );
-    listenerMenu.exec(globalPos );
+    listenerMenu.exec( globalPos );
 }
 
 void ListenersWidget::createListener()

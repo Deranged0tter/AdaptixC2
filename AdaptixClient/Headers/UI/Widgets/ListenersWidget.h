@@ -7,11 +7,18 @@
 
 class ListenersWidget : public QWidget
 {
-    QWidget*      mainWidget     = nullptr;
-    QGridLayout*  mainGridLayout = nullptr;
-    QTableWidget* tableWidget    = nullptr;
+    QWidget*        mainWidget          = nullptr;
+    QGridLayout*    mainGridLayout      = nullptr;
+    QTableWidget*   tableWidget         = nullptr;
+    QPushButton*    newListenerButton   = nullptr;
+    QPushButton*    editListenerButton  = nullptr;
+    QPushButton*    delListenerButton   = nullptr;
 
     void createUI();
+
+    void onNewListenerPush();
+    void onEditListenerPush();
+    void onDeleteListenerPush();
 
 public:
     explicit ListenersWidget( QWidget* w );
