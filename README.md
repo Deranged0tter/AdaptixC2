@@ -1,4 +1,5 @@
-# AdaptixC2 v0.1
+# AdaptixC2 
+> This fork changes some of the UI elements because i like buttons.
 
 Adaptix is an extensible post-exploitation and adversarial emulation framework made for penetration testers. The Adaptix server is written in Golang and to allow operator flexibility. The GUI Client is written in C++ QT, allowing it to be used on Linux, Windows, and MacOS operating systems. [Full documentation is available here](https://adaptix-framework.gitbook.io/adaptix-framework).
 
